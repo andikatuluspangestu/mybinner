@@ -1,82 +1,97 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>T-Biner Conventer</title>
-  <link rel="manifest" href="web.webmanifest">
-  <link rel="apple-touch-icon" href="assets/img/icon.svg">
-  <link rel="icon" type="image/svg" href="assets/img/icon.svg">
+<html lang="en">
 
-  <!-- Tailwind CSS & DailyUI CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet" type="text/css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyBinner Converter</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/icon.svg" type="image/svg+xml">
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/images/icon.svg">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="MyBinner Converter">
+  <meta name="description" content="Aplikasi konversi desimal ke biner dan sebaliknya.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="MyBinner Converter">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/images/icon.svg">
+  <meta name="msapplication-navbutton-color" content="#ffffff">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="msapplication-tooltip" content="Aplikasi konversi desimal ke biner dan sebaliknya.">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
 
   <!-- Title -->
-  <div class="grid place-items-center mt-8 mb-8">
-    <h1>T-Biner Converter</h1>
+  <div class="text-center mt-5">
+    <h1>MyBinner Converter</h1>
   </div>
 
-  <div class="grid place-items-center mt-8 mb-3">
-    <img src="assets/images/hero.svg" width="190px" alt="">
-  </div>
+  <!-- Converter Layout -->
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <!-- Desimal -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="dec" class="form-label">Desimal</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="dec" placeholder="Masukan Angka Desimal">
+            <button class="btn btn-secondary" type="button" id="e">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
 
-  <!-- Conventer Layout -->
-
-  <!-- Desimal -->
-  <div class="grid md:grid-cols-4 place-items-center">
-    <div></div>
-    <div>
-      <div class="form-control">
-        <label class="label">
-          <span class="label-text">Desimal</span>
-        </label>
-        <div class="relative">
-          <input name="dec" id="dec" type="text" placeholder="Masukan Angka Desimal" class="w-full pr-16 input input-info input-bordered">
-          <button id="e" class="absolute top-0 right-0 rounded-l-none btn btn-info">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-              class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
-            </svg>
-          </button>
+      <!-- Biner -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="bin" class="form-label">Binary</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="bin" placeholder="Masukan Angka Biner">
+            <button class="btn btn-success" type="button" id="d">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    <br>
-
-    <!-- Biner -->
-    <div>
-      <div class="form-control">
-        <label class="label">
-          <span class="label-text">Binary</span>
-        </label>
-        <div class="relative">
-          <input name="bin" id="bin" type="text" placeholder="Masukan Angka Biner"
-            class="w-full pr-16 input input-success input-bordered">
-          <button id="d" class="absolute top-0 right-0 rounded-l-none btn btn-success">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up-circle"
-              viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div></div>
   </div>
 
   <!-- Copyright -->
-  <p class="fixed-bottom text-center mt-8 mb-8">Build With &hearts; by andikatulusp</p>
+  <footer class="fixed-bottom text-center mt-5">
+    <p>Build With &hearts; by andikatulusp</p>
+  </footer>
 
-  <script src="js/register.js"></script>
-  <script src="js/plugin.js">
-  </script>
-  <script src="js/tbiner.js"></script>
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts -->
+  <script src="assets/js/register.js"></script>
+  <script src="assets/js/plugin.js"></script>
+  <script src="assets/js/tbiner.js"></script>
 </body>
 
 </html>
