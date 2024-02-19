@@ -12,8 +12,7 @@ MyBinner Convert is a web app that allows users to convert between different num
 - HTML
 - CSS
 - JavaScript
-- Tailwind CSS
-- DaisyUI
+- Bootstrap 5.1.3
 
 ## Features
 - Convert between binary, octal, decimal, and hexadecimal number systems.
